@@ -1,0 +1,40 @@
+---
+layout: default
+title: Members
+---
+
+{% include page-header.html title="Members" subtitle="Meet the coding club community" %}
+
+<div class="container content-page">
+    {% assign sorted_members = site.members | sort: 'order' %}
+    
+    {% if sorted_members.size > 0 %}
+    <div class="members-grid">
+        {% for member in sorted_members %}
+        <a href="{{ member.url | relative_url }}" class="member-card-link">
+            <div class="member-card">
+                <div class="member-card-photo">
+                    {% include lazy-image.html src=member.photo alt=member.name %}
+                </div>
+                <div class="member-card-content">
+                    <h3>{{ member.name }}</h3>
+                    <p class="member-card-role">{{ member.role }}</p>
+                    <p class="member-card-bio">{{ member.excerpt | strip_html | truncatewords: 25 }}</p>
+                    {% include social-links.html member=member style="compact" %}
+                    <div class="member-card-action">
+                        <a href="{{ member.url | relative_url }}" class="member-card-link">
+                            <span class="view-profile-hint">View Profile →</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="no-content">
+        <p>Member profiles coming soon!</p>
+    </div>
+    {% endif %}
+</div>
+

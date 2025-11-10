@@ -1,0 +1,89 @@
+# Site settings
+title: "IHE Delft Coding Club"
+description: "Water and Sustainable Development Masters Program Coding Community"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+
+# Organization info
+organization:
+  name: "IHE Delft Student Groups"
+  partner: "Open Tech International"
+  partner_url: "https://opentechinternational.org/"
+  ihe_program: "MSc Water and Sustainable Development"
+  ihe_program_url: "https://www.un-ihe.org/education/master-programmes/msc-programme-water-and-sustainable-development"
+  google_calendar_url: "https://calendar.google.com/calendar/u/0?cid=OGI5ZTUzM2U5OTI0NmFkMDVhM2Q0MTNjNzhiYmUyZDdlZjk2NzA2OTQxZTM0Yzg0ZTIyZjE5ODU3NzY3MzRhNUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
+
+# Contact
+contact_email: "kto002@un-ihe.org"
+
+# Meeting Schedule
+# To use single day: leave day2 empty or delete day2 lines
+meeting_times:
+  day1: "Mondays"
+  day1_time: "6-7pm"
+  day1_time_full: "6:00-7:00pm"
+  day2: "Thursdays"           # Leave empty "" for single day
+  day2_time: "6-8pm"
+  day2_time_full: "6:00-8:00pm"
+
+
+# ------------------------------------------------------------
+# This section is unlikely to change
+
+# Collections
+collections:
+  events:
+    output: true
+    permalink: /events/:name/
+  members:
+    output: true
+    permalink: /members/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "events"
+    values:
+      layout: "event"
+  - scope:
+      path: ""
+      type: "members"
+    values:
+      layout: "member"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "default"
+
+# Build settings
+markdown: kramdown
+future: true  # Show events with future dates
+timezone: Europe/Amsterdam  # IHE Delft local time (CET/CEST)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Performance optimizations
+sass:
+  style: compressed  # Minify CSS
+  
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - PRE_LAUNCH.md
+  - TECHNICAL.md
+  - SETUP.md
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - _members/_TEMPLATE*.md  # Template files for new members
+  - _events/_TEMPLATE*.md   # Template files for new events
+  - _events/_EXAMPLE*.md    # Example event files
+

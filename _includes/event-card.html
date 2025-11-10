@@ -1,0 +1,71 @@
+{% comment %}
+  Event card component
+  Parameters:
+  - event: The event object
+  - style: "preview" (for homepage) or "full" (for events page)
+  - is_past: boolean for past events
+{% endcomment %}
+
+{% if include.style == "preview" %}
+<a href="{{ include.event.url | relative_url }}" class="event-card-link">
+    <div class="event-card">
+        <div class="event-date">
+            <span class="day">{{ include.event.date | date: "%d" }}</span>
+            <span class="month">{{ include.event.date | date: "%b" }}</span>
+            {% if include.event.sessions %}
+            <span class="multi-session-badge">{{ include.event.sessions | size }} sessions</span>
+            {% endif %}
+        </div>
+        <div class="event-info">
+            <h3>{{ include.event.title }}</h3>
+            {% if include.event.sessions %}
+            <p class="event-meta event-sessions-list">
+                {% for session in include.event.sessions %}
+                <span>📅 {{ session.date | date: "%b %d" }}</span>
+                {% endfor %}
+            </p>
+            {% else %}
+            <p class="event-meta">
+                <span>📍 {{ include.event.location }}</span>
+                <span>🕒 {{ include.event.date | date: "%I:%M %p" }}</span>
+            </p>
+            {% endif %}
+            <p>{{ include.event.excerpt | strip_html | truncatewords: 20 }}</p>
+        </div>
+    </div>
+</a>
+{% else %}
+<a href="{{ include.event.url | relative_url }}" class="event-item-link">
+    <div class="event-item">
+        <div class="event-date-badge{% if include.is_past %} past{% endif %}">
+            <span class="day">{{ include.event.date | date: "%d" }}</span>
+            <span class="month">{{ include.event.date | date: "%b" }}</span>
+            <span class="year">{{ include.event.date | date: "%Y" }}</span>
+            {% if include.event.sessions %}
+            <span class="multi-session-badge">{{ include.event.sessions | size }} sessions</span>
+            {% endif %}
+        </div>
+        <div class="event-details">
+            <h3>{{ include.event.title }}</h3>
+            <div class="event-meta">
+                {% if include.event.sessions %}
+                <div class="sessions-dates-list">
+                    {% for session in include.event.sessions %}
+                    <span>📅 {{ session.date | date: "%a, %b %d, %Y" }}{% if session.topic %} • {{ session.topic }}{% endif %}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <span>🕒 {{ include.event.date | date: "%A, %B %d, %Y at %I:%M %p" }}</span>
+                <span>📍 {{ include.event.location }}</span>
+                {% endif %}
+                {% if include.event.instructor %}
+                <span>👤 {{ include.event.instructor }}</span>
+                {% endif %}
+            </div>
+            <p>{{ include.event.excerpt | strip_html }}</p>
+            <span class="btn btn-small">{% if include.is_past %}View Details{% else %}Learn More{% endif %}</span>
+        </div>
+    </div>
+</a>
+{% endif %}
+

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0066a1">
+    <meta name="description" content="{{ site.description }}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicon-32x32.png' | relative_url }}?v=1">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/favicon-16x16.png' | relative_url }}?v=1">
+    <link rel="shortcut icon" type="image/png" href="{{ '/assets/images/favicon-32x32.png' | relative_url }}?v=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}?v=1">
+    
+    <!-- Performance & Mobile Optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <title>{{ page.title }} - {{ site.title }}</title>
+    
+    <!-- Critical CSS inline for faster initial render -->
+    <style>
+        body{margin:0;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;color:#333;}
+        .navbar{background-color:#0066a1;color:#fff;padding:1rem 0;}
+        .container{max-width:1200px;margin:0 auto;padding:0 20px;}
+    </style>
+    
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    {% seo %}
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-menu">
+                <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a>
+                <a href="{{ '/events' | relative_url }}" {% if page.url contains '/events' %}class="active"{% endif %}>Events</a>
+                <a href="{{ '/members' | relative_url }}" {% if page.url contains '/members' %}class="active"{% endif %}>Members</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        {{ content }}
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{ site.title }}</h3>
+                    <p>Part of <a href="{{ site.organization.ihe_program_url }}" target="_blank">{{ site.organization.ihe_program }}</a></p>
+                    <p>Technical support provided by <a href="{{ site.organization.partner_url }}" target="_blank">{{ site.organization.partner }}</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+                        <li><a href="{{ '/events' | relative_url }}">Events</a></li>
+                        <li><a href="{{ '/members' | relative_url }}">Members</a></li>
+                        <li><a href="{{ site.organization.ihe_program_url }}" target="_blank">IHE Delft Program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Our Partners</h4>
+                    <a href="{{ site.organization.partner_url }}" target="_blank" class="partner-logo">
+                        {% include lazy-image.html src="/assets/images/oti-logo.svg" alt="Open Tech International" class="oti-logo" %}
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Mobile Navigation Script -->
+    <script>
+        // Mobile menu toggle
+        (function() {
+            const toggle = document.querySelector('.nav-toggle');
+            const menu = document.querySelector('.nav-menu');
+            
+            if (toggle) {
+                toggle.addEventListener('click', function() {
+                    const isOpen = menu.classList.toggle('active');
+                    toggle.classList.toggle('active');
+                    toggle.setAttribute('aria-expanded', isOpen);
+                    document.body.style.overflow = isOpen ? 'hidden' : '';
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+                        menu.classList.remove('active');
+                        toggle.classList.remove('active');
+                        toggle.setAttribute('aria-expanded', 'false');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+            
+            // Register service worker for offline support
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                    navigator.serviceWorker.register('{{ "/sw.js" | relative_url }}')
+                        .catch(function() {
+                            // Service worker registration failed, that's okay
+                        });
+                });
+            }
+            
+            // Lazy load images
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            if (img.dataset.src) {
+                                img.src = img.dataset.src;
+                                img.removeAttribute('data-src');
+                                img.classList.add('loaded');
+                                imageObserver.unobserve(img);
+                            }
+                        }
+                    });
+                }, {
+                    rootMargin: '50px'  // Start loading 50px before entering viewport
+                });
+                
+                document.querySelectorAll('.lazy-image[data-src]').forEach(function(img) {
+                    imageObserver.observe(img);
+                });
+            } else {
+                // Fallback for older browsers
+                document.querySelectorAll('.lazy-image[data-src]').forEach(function(img) {
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                    img.classList.add('loaded');
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
+

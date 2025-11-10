@@ -1,0 +1,12 @@
+<div class="page-header">
+    <div class="container">
+        <h1>{{ include.title }}</h1>
+        {% if include.subtitle %}
+        <p>{{ include.subtitle }}</p>
+        {% endif %}
+        {% if include.show_calendar_btn %}
+        <a href="{{ site.organization.google_calendar_url }}" target="_blank" class="btn btn-primary">Subscribe to Calendar</a>
+        {% endif %}
+    </div>
+</div>
+

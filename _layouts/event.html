@@ -1,0 +1,72 @@
+---
+layout: default
+---
+{% include page-header.html title=page.title %}
+
+<div class="container content-page">
+    <div class="event-details">
+        {% if page.sessions %}
+        <!-- Multi-session event - show basic info only -->
+        <div class="event-meta">
+            {% if page.instructor %}
+            <div class="meta-item">
+                <strong>👤 Instructor:</strong>
+                <span>{{ page.instructor }}</span>
+            </div>
+            {% endif %}
+            <div class="meta-item">
+                <em>This is a multi-session event. See session details below.</em>
+            </div>
+        </div>
+        {% else %}
+        <!-- Single session event -->
+        <div class="event-meta">
+            <div class="meta-item">
+                <strong>📅 Date & Time:</strong>
+                <span>{{ page.date | date: "%B %d, %Y at %I:%M %p" }}</span>
+            </div>
+            <div class="meta-item">
+                <strong>📍 Location:</strong>
+                <span>{{ page.location }}</span>
+            </div>
+            {% if page.instructor %}
+            <div class="meta-item">
+                <strong>👤 Instructor:</strong>
+                <span>{{ page.instructor }}</span>
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
+
+        <div class="event-content">
+            {{ content }}
+        </div>
+
+        {% if page.sessions %}
+        <!-- Multi-session event - detailed schedule -->
+        <div class="event-sessions">
+            <h3>📅 Session Schedule</h3>
+            {% for session in page.sessions %}
+            <div class="session-item">
+                <div class="session-info">
+                    <strong>{{ session.date | date: "%A, %B %d, %Y" }}</strong>
+                    <span class="session-time">🕒 {{ session.date | date: "%I:%M %p" }}{% if session.end_time %} - {{ session.end_time }}{% endif %}</span>
+                    {% if session.location %}
+                    <span class="session-location">📍 {{ session.location }}</span>
+                    {% endif %}
+                    {% if session.topic %}
+                    <span class="session-topic">{{ session.topic }}</span>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="event-actions">
+            <a href="{{ site.organization.google_calendar_url }}" target="_blank" class="btn btn-primary">Add to Google Calendar</a>
+            <a href="{{ '/events' | relative_url }}" class="btn btn-secondary">Back to Events</a>
+        </div>
+    </div>
+</div>
+

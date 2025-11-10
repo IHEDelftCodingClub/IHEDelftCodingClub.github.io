@@ -1,0 +1,46 @@
+---
+layout: default
+title: Events
+---
+
+{% include page-header.html title="Events" subtitle="Join our collaborative coding sessions and workshops" show_calendar_btn=true %}
+
+<div class="container content-page">
+    <div class="section" style="background-color: #f0f8ff; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; text-align: center;">
+        <h3 style="color: #0066a1; margin-bottom: 0.5rem;">📅 Regular Meeting {% if site.meeting_times.day2 != "" %}Times{% else %}Time{% endif %}</h3>
+        <p style="margin: 0.5rem 0;"><strong>{{ site.meeting_times.day1 }}:</strong> {{ site.meeting_times.day1_time_full }}{% if site.meeting_times.day2 != "" %} | <strong>{{ site.meeting_times.day2 }}:</strong> {{ site.meeting_times.day2_time_full }}{% endif %}</p>
+        <p style="margin: 0.5rem 0; font-size: 0.9rem;">Drop in anytime—no RSVP needed! Check <a href="{{ site.organization.google_calendar_url }}" target="_blank">Google Calendar</a> for location and any special workshops.</p>
+    </div>
+    {% assign sorted_events = site.events | sort: 'date' %}
+    {% assign upcoming = sorted_events | where_exp: "event", "event.date >= site.time" %}
+    {% assign past = sorted_events | where_exp: "event", "event.date < site.time" | reverse %}
+    
+    {% if upcoming.size > 0 %}
+    <section class="events-section">
+        <h2>Upcoming Events</h2>
+        <div class="events-list">
+            {% for event in upcoming %}
+                {% include event-card.html event=event style="full" %}
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+    
+    {% if past.size > 0 %}
+    <section class="events-section">
+        <h2>Past Events</h2>
+        <div class="events-list past-events">
+            {% for event in past %}
+                {% include event-card.html event=event style="full" is_past=true %}
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+    
+    {% if upcoming.size == 0 and past.size == 0 %}
+    <div class="no-content">
+        <p>No events scheduled yet. Check back soon for upcoming sessions!</p>
+    </div>
+    {% endif %}
+</div>
+

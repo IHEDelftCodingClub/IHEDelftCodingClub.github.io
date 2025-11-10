@@ -1,0 +1,53 @@
+---
+layout: default
+---
+{% include page-header.html title=page.name %}
+
+<div class="container content-page">
+    <div class="member-profile">
+        <div class="member-header">
+            <div class="member-photo">
+                {% include lazy-image.html src=page.photo alt=page.name %}
+            </div>
+            <div class="member-info">
+                <h2>{{ page.name }}</h2>
+                <p class="member-role">{{ page.role }}</p>
+                {% include social-links.html member=page style="full" %}
+            </div>
+        </div>
+
+        <div class="member-bio">
+            <h3>About</h3>
+            {{ content }}
+        </div>
+
+        {% if page.video %}
+        <div class="member-video">
+            <h3>Why I Joined Coding Club</h3>
+            <div class="video-container">
+                <iframe src="{{ page.video }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if page.projects %}
+        <div class="member-projects">
+            <h3>Projects</h3>
+            <div class="projects-grid">
+                {% for project in page.projects %}
+                <div class="project-card">
+                    <h4>{{ project.name }}</h4>
+                    <p>{{ project.description }}</p>
+                    <a href="{{ project.url }}" target="_blank" class="btn btn-small">View Project</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="back-link">
+            <a href="{{ '/members' | relative_url }}" class="btn btn-secondary">Back to Members</a>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,114 @@
+---
+layout: default
+title: Home
+---
+
+<div class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>IHE Delft Coding Club</h1>
+            <p class="hero-subtitle">Building software skills for water and sustainable development</p>
+            <div class="hero-badges">
+                <span class="badge">📅 {{ site.meeting_times.day1 }} {{ site.meeting_times.day1_time }}</span>
+                {% if site.meeting_times.day2 != "" %}
+                <span class="badge">📅 {{ site.meeting_times.day2 }} {{ site.meeting_times.day2_time }}</span>
+                {% endif %}
+            </div>
+            <div class="hero-actions">
+                <a href="#about" class="btn btn-primary">Learn More</a>
+                <a href="{{ '/events' | relative_url }}" class="btn btn-secondary">View Events</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <section id="about" class="section">
+        <h2>About</h2>
+        <div class="about-content">
+            <p>
+                The IHE Delft Coding Club is a student-led initiative for the MSc Water and Sustainable Development program. 
+                Drop in to work on your projects while getting support and guidance. Think of it as a study hall for coding—bring 
+                your laptop, work on what you need, and get help when you're stuck. We run structured workshops on specific topics, 
+                but most sessions are informal peer coaching where you drive the agenda.
+            </p>
+            <p>
+                Whether you're a complete beginner or looking to enhance your existing skills, our inclusive community 
+                provides a supportive environment to learn and grow together. 
+            </p>
+        </div>
+    </section>
+
+    <section id="what-we-offer" class="section section-highlight">
+        <h2>What We Offer</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>Regular Drop-In Sessions</h3>
+                <p>Drop in whenever works for you—no RSVP needed. Work on your own projects while getting help and support. Bring your laptop, ask questions, and learn alongside peers.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3>Thesis & Project Support</h3>
+                <p>Get guidance on applying coding to your thesis research, water data analysis, and sustainability projects. We help you solve real problems.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💻</div>
+                <h3>Skill Building Workshops</h3>
+                <p>Structured classes on specific topics like Python, version control, data visualization, and website development.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>Peer Learning Community</h3>
+                <p>Connect with fellow students passionate about using technology for water and sustainable development. Learn together, share solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="upcoming-events" class="section">
+        <h2>Upcoming Events</h2>
+        {% assign upcoming_events = site.events | sort: 'date' | where_exp: "event", "event.date >= site.time" | limit: 3 %}
+        {% if upcoming_events.size > 0 %}
+        <div class="events-preview">
+            {% for event in upcoming_events %}
+                {% include event-card.html event=event style="preview" %}
+            {% endfor %}
+        </div>
+        <div class="section-actions">
+            <a href="{{ '/events' | relative_url }}" class="btn btn-primary">View All Events</a>
+            <a href="{{ site.organization.google_calendar_url }}" target="_blank" class="btn btn-secondary">Subscribe to Calendar</a>
+        </div>
+        {% else %}
+        <p class="no-events">No upcoming events scheduled yet. Check back soon!</p>
+        {% endif %}
+    </section>
+
+    <section id="contact" class="section section-highlight">
+        <h2>Get Involved</h2>
+        <div class="contact-content">
+            <p>
+                Interested in joining the Coding Club? We welcome all students from the MSc Water and 
+                Sustainable Development program, regardless of coding experience. <strong>Just show up!</strong> 
+                No RSVP needed (except for workshops).
+            </p>
+            <div class="contact-methods">
+                <div class="contact-card">
+                    <h3>📅 When & Where</h3>
+                    <p>
+                        <strong>{{ site.meeting_times.day1 }}:</strong> {{ site.meeting_times.day1_time_full }}<br>
+                        {% if site.meeting_times.day2 != "" %}<strong>{{ site.meeting_times.day2 }}:</strong> {{ site.meeting_times.day2_time_full }}<br>{% endif %}
+                    </p>
+                    <p><small>Check <a href="{{ site.organization.google_calendar_url }}" target="_blank">Google Calendar</a> for location and special events</small></p>
+                </div>
+                <div class="contact-card">
+                    <h3>Questions?</h3>
+                    <p>
+                        Email us at <a href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>
+                    </p>
+                    <p><small>Or reach out to any member at a session!</small></p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
