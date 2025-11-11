@@ -1,0 +1,36 @@
+{% comment %}
+  Dismissable one-time schedule warning banner
+  Uses localStorage to remember if user has dismissed it
+{% endcomment %}
+
+<div id="schedule-banner" class="schedule-banner" style="display: none;">
+  <div class="banner-content">
+    <div class="banner-icon">⚠️</div>
+    <div class="banner-text">
+      <strong>Schedule Update:</strong> Regular meeting times might change as class schedules become more intense. We will try to maintain at least one hour per week. Check the <a href="{{ '/events' | relative_url }}">Events calendar</a> for the most current schedule.
+    </div>
+    <button class="banner-close" aria-label="Dismiss banner">×</button>
+  </div>
+</div>
+
+<script>
+  // Check if banner was previously dismissed
+  (function() {
+    const bannerDismissed = localStorage.getItem('scheduleBannerDismissed');
+    const banner = document.getElementById('schedule-banner');
+    
+    if (!bannerDismissed && banner) {
+      banner.style.display = 'block';
+      
+      // Handle close button
+      const closeBtn = banner.querySelector('.banner-close');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+          banner.style.display = 'none';
+          localStorage.setItem('scheduleBannerDismissed', 'true');
+        });
+      }
+    }
+  })();
+</script>
+

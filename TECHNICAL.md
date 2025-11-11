@@ -11,6 +11,7 @@ Developer documentation for the IHE Delft Coding Club website architecture, comp
 5. [Mobile Optimizations](#mobile-optimizations)
 6. [Development Workflow](#development-workflow)
 7. [Customization](#customization)
+8. [Best Practices](#best-practices)
 
 ---
 
@@ -81,14 +82,14 @@ cd IHEDelftCodingClub/ihe-coding-club-website
 bundle install --path vendor/bundle
 
 # Run Jekyll development server
-bundle exec jekyll serve --future
+bundle exec jekyll serve
 
 # Site will be available at http://localhost:4000
 ```
 
 **Important Notes:**
 - **Always use `bundle exec`** before Jekyll commands to ensure you're using the correct gem versions from `Gemfile.lock`
-- The `--future` flag is required to show events with future dates
+- Future-dated events will show automatically (configured in `_config.yml` with `future: true`)
 - The `--path vendor/bundle` flag keeps gems isolated to the project (optional but recommended)
 
 ### Common Installation Issues
@@ -113,7 +114,7 @@ sudo apt-get install build-essential patch ruby-dev zlib1g-dev liblzma-dev
 **Issue: Jekyll command not found**
 ```bash
 # Make sure bundler is being used
-bundle exec jekyll serve --future
+bundle exec jekyll serve
 
 # If still not working, reinstall
 bundle install
@@ -346,15 +347,15 @@ Mobile browser theme matches site:
 ### Local Development
 
 ```bash
-# Start server with future posts
-bundle exec jekyll serve --future
+# Start server
+bundle exec jekyll serve
 
 # Clean build
 bundle exec jekyll clean
-bundle exec jekyll serve --future
+bundle exec jekyll serve
 
 # Custom port
-bundle exec jekyll serve --port 4001 --future
+bundle exec jekyll serve --port 4001
 ```
 
 ### Configuration Changes
@@ -363,7 +364,7 @@ bundle exec jekyll serve --port 4001 --future
 
 After editing config:
 1. Stop server (Ctrl+C)
-2. Restart: `bundle exec jekyll serve --future`
+2. Restart: `bundle exec jekyll serve`
 
 ### Adding New Components
 
@@ -460,7 +461,117 @@ For more advanced features (custom domains, faster builds):
    - **Publish directory:** `_site`
 3. Deploy
 
-**Note:** Remember to set `future: true` in `_config.yml` to show upcoming events.
+**Note:** The site is configured with `future: true` in `_config.yml` to automatically show upcoming events.
+
+### Schedule Banner (Dismissable Warning)
+
+The site includes a dismissable banner for temporary announcements (e.g., schedule changes).
+
+**Location:** `_includes/schedule-banner.html`
+
+#### How It Works
+- Banner appears at the top of every page
+- Uses **localStorage** (not cookies) to remember dismissal
+- Once closed, it won't show again in that browser
+- Persists across all pages
+- Resets when user clears browser cache
+
+#### Update Banner Message
+
+Edit `_includes/schedule-banner.html`:
+
+```html
+<div class="banner-text">
+  <strong>Schedule Update:</strong> Your new message here...
+</div>
+```
+
+**Important:** If you want dismissed banners to show again after updating the message, change the localStorage key:
+
+```javascript
+// Change 'scheduleBannerDismissed' to something new
+localStorage.setItem('scheduleBannerDismissedV2', 'true');
+```
+
+#### Remove Banner Completely
+
+1. Delete `_includes/schedule-banner.html`
+2. Remove from `_layouts/default.html`:
+   ```liquid
+   {% include schedule-banner.html %}
+   ```
+
+#### Testing: Clear localStorage to See Banner Again
+
+**Chrome:**
+1. Open DevTools (F12 or Cmd+Option+I)
+2. Go to **Application** tab
+3. Left sidebar: **Storage** → **Local Storage** → Select your site URL
+4. Right-click on `scheduleBannerDismissed` → **Delete**
+5. Refresh page
+
+**Alternative (Clear all site data):**
+1. Chrome Settings → Privacy and security → Site Settings
+2. View permissions and data stored → Find your localhost URL
+3. Click **Clear data**
+
+**Quick method for localhost testing:**
+- Use Incognito/Private mode (fresh localStorage each time)
+
+### Embedded Google Calendar
+
+The events page includes an embedded Google Calendar that displays all upcoming sessions and workshops.
+
+**Location:** `_includes/calendar-embed.html`
+
+#### Setup: Get Your Calendar ID
+
+You need two things from Google Calendar:
+
+1. **Calendar ID** (for the embed)
+2. **Public sharing URL** (for "Add to Calendar" links)
+
+**Steps:**
+
+1. Go to [Google Calendar](https://calendar.google.com/)
+2. Find your coding club calendar in the left sidebar
+3. Click the three dots (⋮) next to the calendar name → **Settings and sharing**
+4. Scroll to **"Integrate calendar"** section
+5. Copy the **Calendar ID** (looks like: `xyz123@group.calendar.google.com`)
+6. Add it to `_config.yml`:
+   ```yaml
+   organization:
+     google_calendar_id: "your-calendar-id@group.calendar.google.com"
+   ```
+
+#### Make Calendar Public
+
+For the embed to work, the calendar must be publicly viewable:
+
+1. In calendar **Settings and sharing**
+2. Scroll to **"Access permissions for events"**
+3. Check ✅ **"Make available to public"**
+4. Set visibility to "See all event details"
+
+#### Customize the Embed
+
+The embed uses these settings (configured in `calendar-embed.html`):
+- **View:** AGENDA mode (list view, works best on mobile)
+- **Timezone:** Europe/Amsterdam (matches site timezone)
+- **Hidden:** Title, print button, extra calendars
+- **Shown:** Navigation, dates, tabs
+
+To change the view mode, edit the iframe `src` parameter:
+- `mode=AGENDA` - List view (current, best for mobile)
+- `mode=WEEK` - Week grid view
+- `mode=MONTH` - Month grid view
+
+#### Benefits Over External Link
+
+- **Lower barrier:** Users can see schedule without leaving your site
+- **Always current:** Updates automatically when you edit Google Calendar
+- **Mobile-optimized:** Responsive design works on all devices
+- **Better UX:** Banner links to `/events` (internal) instead of Google Calendar (external)
 
 ---
 

@@ -88,6 +88,78 @@ img {
     filter: blur(0);
 }
 
+/* ===========================
+   Schedule Banner (Dismissable)
+   =========================== */
+.schedule-banner {
+    background-color: #fff3cd;
+    border-bottom: 2px solid #ffc107;
+    padding: 1rem 0;
+    position: relative;
+    z-index: 999;
+}
+
+.banner-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.banner-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.banner-text {
+    flex: 1;
+    color: #856404;
+    line-height: 1.5;
+}
+
+.banner-text strong {
+    color: #664d03;
+}
+
+.banner-text a {
+    color: #004085;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.banner-text a:hover {
+    color: #002752;
+}
+
+.banner-close {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    line-height: 1;
+    color: #856404;
+    cursor: pointer;
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.banner-close:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.banner-close:focus {
+    outline: 2px solid #664d03;
+    outline-offset: 2px;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -1044,9 +1116,116 @@ footer ul li {
 }
 
 /* ===========================
+   Calendar Embed
+   =========================== */
+.calendar-embed-container {
+    background-color: var(--white);
+    border: 1px solid var(--gray-border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+}
+
+.calendar-title {
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+    font-size: 1.75rem;
+}
+
+.calendar-description {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.calendar-add-link {
+    color: var(--primary-blue);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.calendar-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 80%; /* Taller for month view */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid var(--gray-border);
+    background-color: var(--gray-light);
+}
+
+.calendar-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.calendar-note {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: var(--gray-light);
+    border-radius: 6px;
+    color: var(--text-light);
+}
+
+.calendar-note small {
+    line-height: 1.6;
+}
+
+/* ===========================
    Responsive Design
    =========================== */
 @media (max-width: 768px) {
+    /* Schedule Banner */
+    .schedule-banner {
+        padding: 0.75rem 0;
+    }
+    
+    .banner-content {
+        gap: 0.75rem;
+        padding: 0 15px;
+    }
+    
+    .banner-icon {
+        font-size: 1.25rem;
+    }
+    
+    .banner-text {
+        font-size: 0.9rem;
+    }
+    
+    .banner-close {
+        font-size: 1.75rem;
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+
+    /* Calendar Embed */
+    .calendar-embed-container {
+        padding: 1.5rem 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .calendar-title {
+        font-size: 1.5rem;
+    }
+    
+    .calendar-description {
+        font-size: 0.9rem;
+    }
+    
+    .calendar-wrapper {
+        padding-bottom: 100%; /* Taller on mobile for better agenda view */
+    }
+    
+    .calendar-note {
+        font-size: 0.85rem;
+        padding: 0.75rem;
+    }
+
     /* Mobile Navigation */
     .nav-toggle {
         display: flex;

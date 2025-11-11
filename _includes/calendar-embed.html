@@ -1,0 +1,35 @@
+{% comment %}
+  Google Calendar Embed Component
+  Displays an embedded view of the coding club's Google Calendar
+  
+  To update the calendar embed code:
+  1. Go to Google Calendar settings for your calendar
+  2. Scroll to "Integrate calendar" section
+  3. Click "Customize" under the embed code
+  4. Adjust settings (recommended: week view, hide details for privacy)
+  5. Copy the iframe code and replace the src below
+{% endcomment %}
+
+<div class="calendar-embed-container">
+    <h3 class="calendar-title">📅 Full Calendar View</h3>
+    <p class="calendar-description">
+        See all sessions at a glance. Click any date for more details. 
+        <a href="{{ site.organization.google_calendar_url }}" target="_blank" class="calendar-add-link">Add to your calendar →</a>
+    </p>
+    
+    <div class="calendar-wrapper">
+        <iframe 
+            src="https://calendar.google.com/calendar/embed?src={{ site.organization.google_calendar_id | url_encode }}&ctz=Europe%2FAmsterdam&mode=MONTH&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0"
+            style="border: 0" 
+            frameborder="0" 
+            scrolling="no"
+            class="calendar-iframe"
+            title="IHE Delft Coding Club Calendar">
+        </iframe>
+    </div>
+    
+    <p class="calendar-note">
+        <small>💡 <strong>Tip:</strong> Regular drop-in times are {{ site.meeting_times.day1 }} {{ site.meeting_times.day1_time }}{% if site.meeting_times.day2 != "" %} and {{ site.meeting_times.day2 }} {{ site.meeting_times.day2_time }}{% endif %}. Special workshops will appear as separate events.</small>
+    </p>
+</div>
+

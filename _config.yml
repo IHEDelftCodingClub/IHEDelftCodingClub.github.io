@@ -11,7 +11,8 @@ organization:
   partner_url: "https://opentechinternational.org/"
   ihe_program: "MSc Water and Sustainable Development"
   ihe_program_url: "https://www.un-ihe.org/education/master-programmes/msc-programme-water-and-sustainable-development"
-  google_calendar_url: "https://calendar.google.com/calendar/u/0?cid=OGI5ZTUzM2U5OTI0NmFkMDVhM2Q0MTNjNzhiYmUyZDdlZjk2NzA2OTQxZTM0Yzg0ZTIyZjE5ODU3NzY3MzRhNUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
+  google_calendar_url: "https://calendar.google.com/calendar/u/0?cid=MTc3Y2NkZjdkMmRiOGEzOTBhMzdmZDMzNGU2NjA2MjcyMzc2OTllODBmNjRjZDdkZmQwMWVjZWU1ODZiMjQxZUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t" # for sharing
+  google_calendar_id: "8b9e533e99246ad05a3d413c78bbe2d7ef96706941e34c84e22f1985776734a5@group.calendar.google.com"  # For calendar embed
 
 # Contact
 contact_email: "kto002@un-ihe.org"

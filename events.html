@@ -9,8 +9,9 @@ title: Events
     <div class="section" style="background-color: #f0f8ff; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; text-align: center;">
         <h3 style="color: #0066a1; margin-bottom: 0.5rem;">📅 Regular Meeting {% if site.meeting_times.day2 != "" %}Times{% else %}Time{% endif %}</h3>
         <p style="margin: 0.5rem 0;"><strong>{{ site.meeting_times.day1 }}:</strong> {{ site.meeting_times.day1_time_full }}{% if site.meeting_times.day2 != "" %} | <strong>{{ site.meeting_times.day2 }}:</strong> {{ site.meeting_times.day2_time_full }}{% endif %}</p>
-        <p style="margin: 0.5rem 0; font-size: 0.9rem;">Drop in anytime—no RSVP needed! Check <a href="{{ site.organization.google_calendar_url }}" target="_blank">Google Calendar</a> for location and any special workshops.</p>
+        <p style="margin: 0.5rem 0; font-size: 0.9rem;">Drop in anytime—no RSVP needed! Scroll down for event details and the full calendar.</p>
     </div>
+    
     {% assign sorted_events = site.events | sort: 'date' %}
     {% assign upcoming = sorted_events | where_exp: "event", "event.date >= site.time" %}
     {% assign past = sorted_events | where_exp: "event", "event.date < site.time" | reverse %}
@@ -25,6 +26,9 @@ title: Events
         </div>
     </section>
     {% endif %}
+    
+    <!-- Calendar appears after detailed events -->
+    {% include calendar-embed.html %}
     
     {% if past.size > 0 %}
     <section class="events-section">

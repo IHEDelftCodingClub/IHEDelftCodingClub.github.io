@@ -29,7 +29,7 @@ cd IHEDelftCodingClub/ihe-coding-club-website
 bundle install
 
 # Run development server
-bundle exec jekyll serve --future
+bundle exec jekyll serve
 
 # Visit http://localhost:4000
 ```
@@ -96,20 +96,20 @@ The section at the bottom (after the ---) is in markdown format. This is where y
 
 **Changes not showing?**
 ```bash
-# Restart Jekyll (remember --future for upcoming events)
-bundle exec jekyll serve --future
+# Restart Jekyll
+bundle exec jekyll serve
 ```
 
 **Config changes not applying?**
 ```bash
 # Clean and rebuild
 bundle exec jekyll clean
-bundle exec jekyll serve --future
+bundle exec jekyll serve
 ```
 
 **Port 4000 in use?**
 ```bash
-bundle exec jekyll serve --port 4001 --future
+bundle exec jekyll serve --port 4001
 ```
 
 ## 📚 Further Documentation

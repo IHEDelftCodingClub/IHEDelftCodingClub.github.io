@@ -44,25 +44,26 @@ tags: ["Python", "Data Analysis", "Beginner"]  # Helps categorize events
 
 ## Overview
 
-Join us for a hands-on Introduction to Python. We'll explore different chart types and learn when to use each one for water-related datasets.
+Join us for a hands-on Introduction to Python. We'll work through basic data structures (variables, lists, sets, tuples, dictionaries, etc), and write scripts to manipulate and view data.
 
 ## What You'll Learn
 
 The course content is still being set, but will likely include:
 - Python data structures
-- Pylib
+- Jupyter & VS Code
 - Panda
-- Plotting
+- Simple data manipulation and display
+- Possibly: displaying map data
 
 ## Prerequisites
 
-- Have attended a Membership Setup, or reached out to Kristen Tonga directly
-- Have a github account (https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github)
+- Have attended the Membership Setup session, or reached out to Kristen Tonga directly
+- Have [created a github account](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github)
 - Bring a laptop 
 
 ## Schedule
 
-TBD
+TBD (to be set on the weekend of the 15/16th)
 
 ## Materials
 
