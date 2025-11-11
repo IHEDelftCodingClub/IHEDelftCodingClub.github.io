@@ -13,7 +13,7 @@ title: "Intro to Python"
 date: 2025-11-17 18:00:00  # Format: YYYY-MM-DD HH:MM:SS (use 24-hour time)
 location: "IHE Delft"  # Or "TBD" if not yet confirmed
 instructor: "Kristen Tonga"  # Or "Peer-led" for drop-in sessions
-excerpt: "During Module 2, we'll work through a basic python course together, to hit the ground running for Module 3."
+excerpt: "During Module 2, we'll do a basic python course together. By the end, use code to manipulate and display data."
 
 # Multi-session format
 sessions:
@@ -44,21 +44,21 @@ tags: ["Python", "Data Analysis", "Beginner"]  # Helps categorize events
 
 ## Overview
 
-Join us for a hands-on Introduction to Python. We'll work through basic data structures (variables, lists, sets, tuples, dictionaries, etc), and write scripts to manipulate and view data.
+Join us for a hands-on Introduction to Python. We'll work through basic python data structures (variables, lists, sets, tuples, dictionaries, etc), and write scripts to manipulate and view data.
 
 ## What You'll Learn
 
-The course content is still being set, but will likely include:
+The course content is still being set, and will be finalized the weekend of the 15th/16th, but will likely include:
 - Python data structures
 - Jupyter & VS Code
 - Panda
 - Simple data manipulation and display
-- Possibly: displaying map data
+- Possibly: displaying map/GIS data
 
 ## Prerequisites
 
-- Have attended the Membership Setup session, or reached out to Kristen Tonga directly
-- Have [created a github account](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github)
+- Attend the Membership Setup session, or reach out to Kristen Tonga directly
+- [Create a github account](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github)
 - Bring a laptop 
 
 ## Schedule
