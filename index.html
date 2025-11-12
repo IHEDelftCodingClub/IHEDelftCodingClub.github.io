@@ -69,9 +69,9 @@ title: Home
         <h2>Upcoming Events</h2>
         {% assign upcoming_events = site.events | sort: 'date' | where_exp: "event", "event.date >= site.time" | limit: 3 %}
         {% if upcoming_events.size > 0 %}
-        <div class="events-preview">
+        <div class="events-list">
             {% for event in upcoming_events %}
-                {% include event-card.html event=event style="preview" %}
+                {% include event-card.html event=event %}
             {% endfor %}
         </div>
         <div class="section-actions">
@@ -95,8 +95,8 @@ title: Home
                 <div class="contact-card">
                     <h3>📅 When & Where</h3>
                     <p>
-                        <strong>{{ site.meeting_times.day1 }}:</strong> {{ site.meeting_times.day1_time_full }}<br>
-                        {% if site.meeting_times.day2 != "" %}<strong>{{ site.meeting_times.day2 }}:</strong> {{ site.meeting_times.day2_time_full }}<br>{% endif %}
+                        <strong>{{ site.meeting_times.day1 }}:</strong> {{ site.meeting_times.day1_time }}<br>
+                        {% if site.meeting_times.day2 != "" %}<strong>{{ site.meeting_times.day2 }}:</strong> {{ site.meeting_times.day2_time }}<br>{% endif %}
                     </p>
                     <p><small>Check <a href="{{ site.organization.google_calendar_url }}" target="_blank">Google Calendar</a> for location and special events</small></p>
                 </div>

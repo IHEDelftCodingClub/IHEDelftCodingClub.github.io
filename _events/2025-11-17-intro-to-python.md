@@ -1,15 +1,15 @@
 ---
 title: "Intro to Python"
-date: 2025-11-17 18:00:00  # Format: YYYY-MM-DD HH:MM:SS (use 24-hour time)
-location: "IHE Delft, B6"  # Or "TBD" if not yet confirmed
-instructor: "Kristen Tonga"  # Or "Peer-led" for drop-in sessions
+date: 2025-11-24T17:00:00Z
+location: "IHE Delft, B6"
+instructor: "Kristen Tonga"
 excerpt: "During Module 2, we'll do a basic python course together. By the end, use code to manipulate and display data."
 
 # Multi-session format
 sessions:
-  - date: 2025-11-24 18:00:00
+  - date: 2025-11-24T17:00:00Z
     end_time: "20:00"
-  - date: 2025-11-27 18:00:00
+  - date: 2025-11-27T17:00:00Z
     end_time: "20:00"
 
 # Optional fields (remove the # to use them):

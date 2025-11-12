@@ -11,30 +11,34 @@
 # 6. Delete these instruction comments
 
 title: "Your Event Title"
-date: 2025-12-01 18:00:00  # Format: YYYY-MM-DD HH:MM:SS (use 24-hour time)
+date: 2025-12-01T17:00:00Z  # For 6pm CET/CEST, use T17:00:00Z (UTC time that converts to local)
+end_time: "7:45pm"  # Optional: End time in format like "7:45pm" or "19:45"
 location: "IHE Delft, Room B6"  # Or "TBD" if not yet confirmed
 instructor: "Instructor Name"  # Or "Peer-led" for drop-in sessions
 excerpt: "A brief one-sentence description that appears on the events page."
 
 # Optional fields (remove the # to use them):
 # tags: ["Python", "Data Analysis", "Beginner"]  # Helps categorize events
-# registration_required: true  # Set to true if people need to RSVP
-# registration_url: "https://forms.gle/example"  # Link to registration form
+
+# REGISTRATION (Uncomment and fill in BOTH lines if registration is recommended):
+# registration_required: true  # Set to true to show registration notice
+# registration_url: "https://forms.gle/example"  # Link to Google Form or registration page
+# NOTE: A "Registration Recommended" notice and badge will appear. Walk-ins are still welcome!
 # materials_url: "https://github.com/username/repo"  # Link to materials
 # video_url: "https://www.youtube.com/watch?v=example"  # Recording link (add after event)
 
 # FOR MULTI-SESSION EVENTS: Use this instead of single date/location
 # Delete the single "date:" and "location:" above and use this format:
 # sessions:
-#   - date: 2025-12-01 18:00:00
+#   - date: 2025-12-01 18:00:00 +0100
 #     end_time: "20:00"  # Optional end time (HH:MM format)
 #     location: "IHE Delft, Room 2.15"
 #     topic: "Session 1: Introduction"  # Optional session title
-#   - date: 2025-12-08 18:00:00
+#   - date: 2025-12-08 18:00:00 +0100
 #     end_time: "20:00"
 #     location: "IHE Delft, Room 2.15"
 #     topic: "Session 2: Advanced Topics"
-#   - date: 2025-12-15 18:00:00
+#   - date: 2025-12-15 18:00:00 +0100
 #     end_time: "20:00"
 #     location: "IHE Delft, Room 2.15"
 #     topic: "Session 3: Final Project"

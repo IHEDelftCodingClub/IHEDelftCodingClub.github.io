@@ -1,8 +1,9 @@
 ---
 title: "Membership Setup: Coding Environment & Version Control"
-date: 2025-11-20 18:00:00  # Format: YYYY-MM-DD HH:MM:SS (use 24-hour time)
-location: "IHE Delft, B6"  # Or "TBD" if not yet confirmed
-instructor: "Kristen Tonga"  # Or "Peer-led" for drop-in sessions
+date: 2025-11-20T17:00:00Z
+end_time: "7:45pm"
+location: "IHE Delft, B6"
+instructor: "Kristen Tonga"
 excerpt: "Setup Virtual Studio (VS) Code, start interacting with the console, and learn about the power of Git."
 
 # Optional fields (remove the # to use them):

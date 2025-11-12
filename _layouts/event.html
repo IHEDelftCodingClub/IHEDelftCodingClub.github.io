@@ -23,7 +23,7 @@ layout: default
         <div class="event-meta">
             <div class="meta-item">
                 <strong>📅 Date & Time:</strong>
-                <span>{{ page.date | date: "%B %d, %Y at %I:%M %p" }}</span>
+                <span>{{ page.date | date: "%B %d, %Y at %I:%M %p" }}{% if page.end_time %} - {{ page.end_time }}{% endif %}</span>
             </div>
             <div class="meta-item">
                 <strong>📍 Location:</strong>
@@ -35,6 +35,17 @@ layout: default
                 <span>{{ page.instructor }}</span>
             </div>
             {% endif %}
+        </div>
+        {% endif %}
+
+        {% if page.registration_required and page.registration_url %}
+        <div class="registration-notice">
+            <div class="registration-icon">📝</div>
+            <div class="registration-text">
+                <strong>Registration Recommended</strong>
+                <p>Please register to help us plan. Walk-ins are also welcome!</p>
+            </div>
+            <a href="{{ page.registration_url }}" target="_blank" class="btn btn-primary registration-btn">Register</a>
         </div>
         {% endif %}
 
@@ -64,7 +75,10 @@ layout: default
         {% endif %}
 
         <div class="event-actions">
-            <a href="{{ site.organization.google_calendar_url }}" target="_blank" class="btn btn-primary">Add to Google Calendar</a>
+            {% if page.registration_required and page.registration_url %}
+            <a href="{{ page.registration_url }}" target="_blank" class="btn btn-primary">Register</a>
+            {% endif %}
+            <a href="{{ site.organization.google_calendar_url }}" target="_blank" class="btn btn-secondary">Add to Calendar</a>
             <a href="{{ '/events' | relative_url }}" class="btn btn-secondary">Back to Events</a>
         </div>
     </div>

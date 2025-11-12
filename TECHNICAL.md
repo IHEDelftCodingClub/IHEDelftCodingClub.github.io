@@ -427,10 +427,8 @@ Edit `_config.yml` to configure site-wide settings including Basic Information, 
 meeting_times:
   day1: "Thursdays"
   day1_time: "6-8pm"
-  day1_time_full: "6:00-8:00pm"
   day2: ""                       # Empty = single day schedule
   day2_time: ""
-  day2_time_full: ""
 ```
 
 ### Deployment
