@@ -1,24 +1,12 @@
 ---
-# EVENT TEMPLATE
-
-# HOW TO USE
-# 1. Copy this file and rename to: YYYY-MM-DD-event-name.md
-#    Example: 2025-12-05-data-visualization-workshop.md
-# 2. Put the file in the _events folder
-# 3. Update the title, date, location, instructor, and excerpt below
-# 4. Fill in the content below the --- line
-# 5. Delete these instruction comments
-
 title: "Intro to Python"
 date: 2025-11-17 18:00:00  # Format: YYYY-MM-DD HH:MM:SS (use 24-hour time)
-location: "IHE Delft"  # Or "TBD" if not yet confirmed
+location: "IHE Delft, B6"  # Or "TBD" if not yet confirmed
 instructor: "Kristen Tonga"  # Or "Peer-led" for drop-in sessions
 excerpt: "During Module 2, we'll do a basic python course together. By the end, use code to manipulate and display data."
 
 # Multi-session format
 sessions:
-  - date: 2025-11-20 18:00:00
-    end_time: "20:00"
   - date: 2025-11-24 18:00:00
     end_time: "20:00"
   - date: 2025-11-27 18:00:00
@@ -26,8 +14,8 @@ sessions:
 
 # Optional fields (remove the # to use them):
 tags: ["Python", "Data Analysis", "Beginner"]  # Helps categorize events
-# registration_required: true  # Set to true if people need to RSVP
-# registration_url: "https://forms.gle/example"  # Link to registration form
+registration_required: true  # Set to true if people need to RSVP
+registration_url: "https://forms.gle/YDQhUdufSaKatvYa8"  # Link to registration form
 # materials_url: "https://github.com/username/repo"  # Link to materials
 # video_url: "https://www.youtube.com/watch?v=example"  # Recording link (add after event)
 
@@ -44,7 +32,11 @@ tags: ["Python", "Data Analysis", "Beginner"]  # Helps categorize events
 
 ## Overview
 
-Join us for a hands-on Introduction to Python. We'll work through basic python data structures (variables, lists, sets, tuples, dictionaries, etc), and write scripts to manipulate and view data.
+Join us for a hands-on Introduction to Python. We'll work through basic python data structures (variables, lists, sets, tuples, dictionaries, etc), and write scripts to manipulate and view data. 
+
+My hope is to get to a point where the attendees can use Jupyter and panda to view a sample dataset, which is the base necessary to be able to manipulate your own datasets. 
+
+Note that, in my understanding, a 3-day version of Introduction to Python will also be done in "Modelling Theory and Computational Methods in Hydraulics and Hydrology" and the "Digital Innovations for Water Challenges" during Module 3. I'm running this course as supplimental, both for those who won't be attending those modules and for people new to coding, who want to get two rounds of exposure to the concepts, from slightly different angles. 
 
 ## What You'll Learn
 
@@ -54,6 +46,7 @@ The course content is still being set, and will be finalized the weekend of the 
 - Panda
 - Simple data manipulation and display
 - Possibly: displaying map/GIS data
+Note that a third session may be added, as desired by the class.
 
 ## Prerequisites
 
@@ -63,7 +56,7 @@ The course content is still being set, and will be finalized the weekend of the 
 
 ## Schedule
 
-TBD (to be set on the weekend of the 15/16th)
+TBD (to be set on the weekend of the 15/16th), and adjusted according to the desires of the attendees. 
 
 ## Materials
 

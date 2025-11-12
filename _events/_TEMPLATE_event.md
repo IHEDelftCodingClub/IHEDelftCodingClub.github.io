@@ -12,7 +12,7 @@
 
 title: "Your Event Title"
 date: 2025-12-01 18:00:00  # Format: YYYY-MM-DD HH:MM:SS (use 24-hour time)
-location: "IHE Delft, Room X.XX"  # Or "TBD" if not yet confirmed
+location: "IHE Delft, Room B6"  # Or "TBD" if not yet confirmed
 instructor: "Instructor Name"  # Or "Peer-led" for drop-in sessions
 excerpt: "A brief one-sentence description that appears on the events page."
 
