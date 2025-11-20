@@ -10,7 +10,7 @@ excerpt: "Setup Virtual Studio (VS) Code, start interacting with the console, an
 tags: ["Setup", "Github", "Beginner"]  # Helps categorize events
 registration_required: true  # Set to true if people need to RSVP
 registration_url: "https://docs.google.com/forms/d/e/1FAIpQLSe3hii3MSwr_pFrFcxBMtCQmRH2y0F4q_n9f-JHNnLcFuvwEQ/viewform?usp=preview"  # Link to registration form
-# materials_url: "https://github.com/username/repo"  # Link to materials
+materials_url: "https://docs.google.com/presentation/d/1-8bAkQRxD2mr20zIvDxBqKLBW_HPPSaSttsOYmwQShE/edit?usp=sharing"  # Link to materials
 # video_url: "https://www.youtube.com/watch?v=example"  # Recording link (add after event)
 
 # BELOW THE LINE (---): Write your event description using markdown formatting
@@ -47,10 +47,6 @@ Join us for a hands-on workshop where we set up our computers together, and star
 - **18:45 - 19:00**: Break
 - **19:00 - 19:45**: Jekyll (website template) overview & Setup your membership Profile
 - **19:45 - 20:00**: Q&A and wrap-up
-
-## Materials
-
-All materials will be shared via our [GitHub repository](https://github.com/IHEDelftCodingClub/) after the session.
 
 ## Questions?
 

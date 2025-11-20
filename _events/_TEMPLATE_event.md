@@ -21,9 +21,8 @@ excerpt: "A brief one-sentence description that appears on the events page."
 # tags: ["Python", "Data Analysis", "Beginner"]  # Helps categorize events
 
 # REGISTRATION (Uncomment and fill in BOTH lines if registration is recommended):
-# registration_required: true  # Set to true to show registration notice
+# registration_required: true  # Set to true to show a "Registration Recommended" notice and badge. Walk-ins are still welcome! If registration_url is set, but registration_required is false, then the url will show up in the sidebar. 
 # registration_url: "https://forms.gle/example"  # Link to Google Form or registration page
-# NOTE: A "Registration Recommended" notice and badge will appear. Walk-ins are still welcome!
 # materials_url: "https://github.com/username/repo"  # Link to materials
 # video_url: "https://www.youtube.com/watch?v=example"  # Recording link (add after event)
 
@@ -83,10 +82,6 @@ Example: Join us for a hands-on workshop on data visualization using Python. We'
 
 **For multi-session events:**
 Sessions are listed at the top of the page. Use this section to describe what will be covered across all sessions.
-
-## Materials
-
-All materials will be shared via our [GitHub repository](https://github.com/IHEDelftCodingClub/) after the session.
 
 ## Questions?
 

@@ -49,35 +49,67 @@ layout: default
         </div>
         {% endif %}
 
-        <div class="event-content">
-            {{ content }}
-        </div>
+        <div class="event-details-wrapper">
+            <div class="event-content-main">
+                <div class="event-content">
+                    {{ content }}
+                </div>
 
-        {% if page.sessions %}
-        <!-- Multi-session event - detailed schedule -->
-        <div class="event-sessions">
-            <h3>📅 Session Schedule</h3>
-            {% for session in page.sessions %}
-            <div class="session-item">
-                <div class="session-info">
-                    <strong>{{ session.date | date: "%A, %B %d, %Y" }}</strong>
-                    <span class="session-time">🕒 {{ session.date | date: "%I:%M %p" }}{% if session.end_time %} - {{ session.end_time }}{% endif %}</span>
-                    {% if session.location %}
-                    <span class="session-location">📍 {{ session.location }}</span>
+                {% if page.sessions %}
+                <!-- Multi-session event - detailed schedule -->
+                <div class="event-sessions">
+                    <h3>📅 Session Schedule</h3>
+                    {% for session in page.sessions %}
+                    <div class="session-item">
+                        <div class="session-info">
+                            <strong>{{ session.date | date: "%A, %B %d, %Y" }}</strong>
+                            <span class="session-time">🕒 {{ session.date | date: "%I:%M %p" }}{% if session.end_time %} - {{ session.end_time }}{% endif %}</span>
+                            {% if session.location %}
+                            <span class="session-location">📍 {{ session.location }}</span>
+                            {% endif %}
+                            {% if session.topic %}
+                            <span class="session-topic">{{ session.topic }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+
+            {% assign show_registration_in_sidebar = false %}
+            {% if page.registration_url and page.registration_required != true %}
+                {% assign show_registration_in_sidebar = true %}
+            {% endif %}
+            
+            {% if show_registration_in_sidebar or page.materials_url or page.video_url %}
+            <aside class="event-resources-card">
+                <h3>Resources</h3>
+                <div class="resource-links">
+                    {% if show_registration_in_sidebar %}
+                    <a href="{{ page.registration_url }}" target="_blank" class="resource-link">
+                        <span class="resource-icon">📝</span>
+                        <span class="resource-text">Register for Event</span>
+                    </a>
                     {% endif %}
-                    {% if session.topic %}
-                    <span class="session-topic">{{ session.topic }}</span>
+                    {% if page.materials_url %}
+                    <a href="{{ page.materials_url }}" target="_blank" class="resource-link">
+                        <span class="resource-icon">📚</span>
+                        <span class="resource-text">Materials & Slides</span>
+                    </a>
+                    {% endif %}
+                    {% if page.video_url %}
+                    <a href="{{ page.video_url }}" target="_blank" class="resource-link">
+                        <span class="resource-icon">🎥</span>
+                        <span class="resource-text">Watch Recording</span>
+                    </a>
                     {% endif %}
                 </div>
-            </div>
-            {% endfor %}
+            </aside>
+            {% endif %}
         </div>
-        {% endif %}
 
         <div class="event-actions">
-            {% if page.registration_required and page.registration_url %}
-            <a href="{{ page.registration_url }}" target="_blank" class="btn btn-primary">Register</a>
-            {% endif %}
             <a href="{{ site.organization.google_calendar_url }}" target="_blank" class="btn btn-secondary">Add to Calendar</a>
             <a href="{{ '/events' | relative_url }}" class="btn btn-secondary">Back to Events</a>
         </div>
