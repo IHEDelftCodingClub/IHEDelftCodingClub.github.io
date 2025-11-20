@@ -41,8 +41,6 @@ bundle exec jekyll serve
 # Visit http://localhost:4000
 ```
 
-**First time with Ruby?** See [TECHNICAL.md](TECHNICAL.md#detailed-setup-guide) for detailed installation instructions.
-
 
 ## 📝 Adding Content
 Jekyll makes it easy to add content, without diving into the details of the code. Follow the instructions to add members and events. If the files are in the right place, and the names all match, the new member or event will automatically show up!
