@@ -11,26 +11,37 @@ title: Members
     {% if sorted_members.size > 0 %}
     <div class="members-grid">
         {% for member in sorted_members %}
-        <a href="{{ member.url | relative_url }}" class="member-card-link">
-            <div class="member-card">
-                <div class="member-card-photo">
-                    {% include lazy-image.html src=member.photo alt=member.name %}
-                </div>
-                <div class="member-card-content">
-                    <h3>{{ member.name }}</h3>
-                    <p class="member-card-role">{{ member.role }}</p>
-                    <p class="member-card-bio">{{ member.excerpt | strip_html | truncatewords: 25 }}</p>
-                    {% include social-links.html member=member style="compact" %}
-                    <div class="member-card-action">
-                        <a href="{{ member.url | relative_url }}" class="member-card-link">
-                            <span class="view-profile-hint">View Profile →</span>
-                        </a>
-                    </div>
+        <div class="member-card" data-href="{{ member.url | relative_url }}">
+            <div class="member-card-photo">
+                {% include lazy-member-photo.html src=member.photo alt=member.name %}
+            </div>
+            <div class="member-card-content">
+                <h3>{{ member.name }}</h3>
+                <p class="member-card-role">{{ member.role }}</p>
+                <p class="member-card-bio">{{ member.excerpt | strip_html | truncatewords: 25 }}</p>
+                {% include social-links.html member=member style="compact" %}
+                <div class="member-card-action">
+                    <span class="view-profile-hint">View Profile →</span>
                 </div>
             </div>
-        </a>
+        </div>
         {% endfor %}
     </div>
+    
+    <script>
+        // Make member cards clickable while allowing social links to work
+        document.querySelectorAll('.member-card[data-href]').forEach(function(card) {
+            card.style.cursor = 'pointer';
+            
+            card.addEventListener('click', function(e) {
+                // Don't navigate if clicking on a link or inside the social links area
+                if (e.target.closest('a') || e.target.closest('.member-card-links')) {
+                    return;
+                }
+                window.location.href = card.getAttribute('data-href');
+            });
+        });
+    </script>
     {% else %}
     <div class="no-content">
         <p>Member profiles coming soon!</p>

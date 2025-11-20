@@ -1,0 +1,19 @@
+{% comment %}
+  Lazy loading member photo component with default profile fallback
+  Parameters:
+  - src: Image source
+  - alt: Alt text (member name)
+  - class: CSS class (optional)
+  
+  Shows a default profile silhouette if photo fails to load
+{% endcomment %}
+
+<img 
+    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f5f5f5' width='400' height='300'/%3E%3Ctext fill='%230066a1' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3ELoading...%3C/text%3E%3C/svg%3E"
+    data-src="{{ include.src | relative_url }}" 
+    data-fallback="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%23e3f2fd' width='200' height='200'/%3E%3Cg transform='translate(100,100)'%3E%3Ccircle cx='0' cy='-20' r='30' fill='%230066a1' opacity='0.3'/%3E%3Cpath d='M-40,50 Q-40,20 -25,10 Q-10,0 0,0 Q10,0 25,10 Q40,20 40,50 Z' fill='%230066a1' opacity='0.3'/%3E%3C/g%3E%3Ctext fill='%230066a1' font-family='Arial' font-size='14' x='50%25' y='85%25' text-anchor='middle' opacity='0.5'%3ENo Photo%3C/text%3E%3C/svg%3E"
+    alt="{{ include.alt }}" 
+    class="lazy-image {% if include.class %}{{ include.class }}{% endif %}"
+    loading="lazy"
+    decoding="async">
+

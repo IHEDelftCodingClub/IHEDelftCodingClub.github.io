@@ -12,9 +12,6 @@
     alt="{{ include.alt }}" 
     class="lazy-image {% if include.class %}{{ include.class }}{% endif %}"
     loading="lazy"
-    decoding="async">
-
-<noscript>
-    <img src="{{ include.src | relative_url }}" alt="{{ include.alt }}" class="{{ include.class }}">
-</noscript>
+    decoding="async"
+    onerror="this.onerror=null; this.src='{{ include.src | relative_url }}'">
 

@@ -119,13 +119,21 @@
                 });
             }
             
-            // Lazy load images
+            // Lazy load images with fallback support
             if ('IntersectionObserver' in window) {
                 const imageObserver = new IntersectionObserver(function(entries, observer) {
                     entries.forEach(function(entry) {
                         if (entry.isIntersecting) {
                             const img = entry.target;
                             if (img.dataset.src) {
+                                // Set up error handler for fallback image
+                                img.onerror = function() {
+                                    if (img.dataset.fallback && img.src !== img.dataset.fallback) {
+                                        img.src = img.dataset.fallback;
+                                        img.onerror = null; // Prevent infinite loop
+                                    }
+                                };
+                                
                                 img.src = img.dataset.src;
                                 img.removeAttribute('data-src');
                                 img.classList.add('loaded');
@@ -143,6 +151,14 @@
             } else {
                 // Fallback for older browsers
                 document.querySelectorAll('.lazy-image[data-src]').forEach(function(img) {
+                    // Set up error handler for fallback image
+                    img.onerror = function() {
+                        if (img.dataset.fallback && img.src !== img.dataset.fallback) {
+                            img.src = img.dataset.fallback;
+                            img.onerror = null;
+                        }
+                    };
+                    
                     img.src = img.dataset.src;
                     img.removeAttribute('data-src');
                     img.classList.add('loaded');
