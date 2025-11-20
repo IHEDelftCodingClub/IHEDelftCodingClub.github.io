@@ -15,8 +15,15 @@ A Jekyll-based website for the IHE Delft Water and Sustainable Development MSc C
 For running and testing this website locally, use the following Quick Start instructions. More technical documentation is found in TECHNICAL.md.
 
 ### Prerequisites
-- Ruby 3.2+
-- Bundler gem
+
+**Ruby 3.2+**
+- **Windows:** [RubyInstaller.org](https://rubyinstaller.org/downloads/) - Download Ruby+Devkit 3.2.x
+- **macOS:** Install via Homebrew: `brew install ruby`
+- **Linux:** Use your package manager (apt, dnf, etc.) or see [ruby-lang.org](https://www.ruby-lang.org/en/downloads/)
+
+**Bundler gem** (installs automatically with Ruby, or run: `gem install bundler`)
+
+**First time with Ruby?** See [TECHNICAL.md](TECHNICAL.md#detailed-setup-guide) for detailed installation instructions including troubleshooting.
 
 ### Installation
 
