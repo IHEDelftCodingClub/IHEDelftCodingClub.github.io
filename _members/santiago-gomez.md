@@ -9,13 +9,13 @@
 
 name: "Santiago Gómez"
 role: "Research MSc Student"
-photo: "/assets/images/members/firstname_lastname.jpg"
+photo: "/assets/images/members/santiago-gomez.jpg"
 email: "sgo008@un-ihe.org"
 
 # Optional but encouraged: Add links to your linkedin, github and a video explaining why you joined!
 # REMOVE THE # at "video" TO SHOW THIS PART!!
-# linkedin: "https://linkedin.com/in/username"   # Optional 
-# github: "https://github.com/username"          # Optional
+# linkedin: "https://www.linkedin.com/in/santiago-gomez-molina/"   # Optional 
+# github: "https://github.com/sgo008"          # Optional
 # video: "https://www.youtube.com/embed/VIDEO_ID"
 # order: 2
 
