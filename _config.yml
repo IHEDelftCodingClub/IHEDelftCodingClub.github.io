@@ -21,9 +21,9 @@ contact_email: "kto002@un-ihe.org"
 # To use single day: leave day2 empty or delete day2 lines
 meeting_times:
   day1: "Mondays"
-  day1_time: "6-7pm"
+  day1_time: "6-7:45pm"
   day1_time_full: "6:00-7:45pm"
-  day2: "Thursdays"           # Leave empty "" for single day
+  day2: "Fridays"           # Leave empty "" for single day
   day2_time: "6-7:45pm"
   day2_time_full: "6:00-7:45pm"
 

@@ -6,6 +6,13 @@ location: "IHE Delft, B6"
 instructor: "Kristen Tonga"
 excerpt: "Setup Virtual Studio (VS) Code, start interacting with the console, and learn about the power of Git."
 
+# Multi-session format
+sessions:
+  - date: 2025-11-17T17:00:00Z
+    end_time: "20:00"
+  - date: 2025-11-24T17:00:00Z
+    end_time: "20:00"
+
 # Optional fields (remove the # to use them):
 tags: ["Setup", "Github", "Beginner"]  # Helps categorize events
 registration_required: true  # Set to true if people need to RSVP

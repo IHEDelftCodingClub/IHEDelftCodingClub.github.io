@@ -7,9 +7,9 @@ excerpt: "During Module 2, we'll do a basic python course together. By the end, 
 
 # Multi-session format
 sessions:
-  - date: 2025-11-24T17:00:00Z
+  - date: 2025-11-28T17:00:00Z
     end_time: "20:00"
-  - date: 2025-11-27T17:00:00Z
+  - date: 2025-12-1T17:00:00Z
     end_time: "20:00"
 
 # Optional fields (remove the # to use them):
