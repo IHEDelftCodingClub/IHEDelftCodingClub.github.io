@@ -16,7 +16,7 @@ sessions:
 tags: ["Python", "Data Analysis", "Beginner"]  # Helps categorize events
 registration_required: true  # Set to true if people need to RSVP
 registration_url: "https://forms.gle/YDQhUdufSaKatvYa8"  # Link to registration form
-# materials_url: "https://github.com/username/repo"  # Link to materials
+materials_url: "https://github.com/IHEDelftCodingClub/intro_to_python/"  # Link to materials
 # video_url: "https://www.youtube.com/watch?v=example"  # Recording link (add after event)
 
 # BELOW THE LINE (---): Write your event description using markdown formatting
