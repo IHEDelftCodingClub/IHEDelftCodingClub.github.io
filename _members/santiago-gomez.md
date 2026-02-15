@@ -9,7 +9,7 @@
 
 name: "Santiago Gómez"
 role: "Research MSc Student"
-photo: "/assets/images/members/santiago-gomez.jpg"
+photo: "/assets/images/members/santiago-gomez.jpeg"
 email: "sgo008@un-ihe.org"
 
 # Optional but encouraged: Add links to your linkedin, github and a video explaining why you joined!
