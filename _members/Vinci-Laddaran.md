@@ -7,16 +7,16 @@
 # 3. Change the name, role, photo, email, linkedin, github and content to personalize this profile to you!
 # 4. Come back later and add in projects you've worked on to showcase your work
 
-name: "First Last"
-role: "Your Role"
-photo: "/assets/images/members/firstname_lastname.jpg"
-email: "your.email@students.ihe.nl"
+name: "Vinci Laddaran"
+role: "Student"
+photo: "/assets/images/members/Vinci_Laddaran.jpg"
+email: "laddaranjaredvincent@gmail.com"
 
 # Optional but encouraged: Add links to your linkedin, github and a video explaining why you joined!
 # REMOVE THE # at "video" TO SHOW THIS PART!!
-# linkedin: "https://linkedin.com/in/username"   # Optional 
-# github: "https://github.com/username"          # Optional
-# video: "https://www.youtube.com/embed/VIDEO_ID"
+linkedin: "https://linkedin.com/in/jbladdaran"   # Optional 
+github: "https://github.com/aled-dalan"          # Optional
+video: "https://www.youtube.com/watch?v=LVFvRNRTEd4"
 # order: 2
 
 # Optional but encouraged: Showcase your projects
@@ -59,7 +59,7 @@ email: "your.email@students.ihe.nl"
 # - `## Heading` makes section headings
 ---
 
-I'm a IHE Delft MSc Student in Water and Sustainable Development.
+Hi! I'm Vinci :> I'm studying in IHE Delft for International Masters in Environmental Technology and Engineering. I love Food and water. Drink your water. 
 
 ---
 
