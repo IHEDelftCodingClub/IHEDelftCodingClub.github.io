@@ -40,4 +40,5 @@ I founded this coding club because complex problems need collaborative solutions
 My thesis focuses on developing scalable decision support systems for water and sanitation providers. To do so, I will be doing a combination of technical analysis and ethnographic observation at utilities around the world.
 
 ### Yes, I like fishing too!
+Salmon fishing especially! Eat wild salmon! Learn more: https://salmonstate.org/
 ![Kristen Worked on a Salmon Seigner in Alaska](/assets/images/members/kristen-tonga-seigns.jpg)
