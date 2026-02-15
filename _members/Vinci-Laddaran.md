@@ -16,7 +16,7 @@ email: "laddaranjaredvincent@gmail.com"
 # REMOVE THE # at "video" TO SHOW THIS PART!!
 linkedin: "https://linkedin.com/in/jbladdaran"   # Optional 
 github: "https://github.com/aled-dalan"          # Optional
-video: "https://www.youtube.com/watch?v=LVFvRNRTEd4"
+video: "https://www.youtube.com/embed/LVFvRNRTEd4"
 # order: 2
 
 # Optional but encouraged: Showcase your projects
