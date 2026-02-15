@@ -61,5 +61,9 @@ email: "sgo008@un-ihe.org"
 
 I'm a IHE Delft MSc Student in Water and Sustainable Development.
 
+I like to study the change space in the water sector. 
+
+I like to focus on things that work. Understanding the challenges is valuable, but I see a bigger benefit in looking for solutions.
+
 ---
 
