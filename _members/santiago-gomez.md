@@ -60,7 +60,7 @@ linkedin: "https://www.linkedin.com/in/santiago-gomez-molina/"
 # - `## Heading` makes section headings
 ---
 
-I'm a IHE Delft MSc Student in Water and Sustainable Development. I like to study the change space in the water sector to create an enabling environment for solutions. 
+I'm a IHE Delft MSc Student in Water and Sustainable Development. I like to study the change space in the water sector to create an enabling environment for solutions to thrive. 
 
 ---
 
