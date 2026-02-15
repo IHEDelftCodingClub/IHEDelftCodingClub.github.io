@@ -1,12 +1,12 @@
+---
 # HOW TO USE
 # 1. Copy this file and rename to: firstname-lastname.md and put it in the _members folder
 # 2. Find a profile photo, rename it to firstname_lastname.jpg or .png and put it in the /assets/images/members/ folder
 # 3. Change the name, role, photo, email, linkedin, github and content to personalize this profile to you!
 # 4. Come back later and add in projects you've worked on to showcase your work
 
-name: "Skye Hasseriis"
 role: "Struggling Member"
-photo: "/assets/images/members/firstname_lastname.jpg"
+photo: "/assets/images/members/Skye-Hasseriis.jpg"
 email: "skyehasseriis@gmail.com"
 
 # Optional but encouraged: Add links to your linkedin, github and a video explaining why you joined!
@@ -55,7 +55,19 @@ linkedin: "https://linkedin.com/in/skye-hasseriis"
 # - `- item` makes bullet points
 # - `## Heading` makes section headings
 ---
+# Current Track & Profile
+Track: Water Hazards, Risk and Climate Change\
+Profile: Enginering Sciences
 
-I'm a IHE Delft MSc Student in Water and Sustainable Development.
+# Background
+I’m Skye, an environmental scientist with an Honours and undergraduate in BSc Earth Science (Geo-Environmental Science) from Stellenbosch University, South Africa.\
+My honours thesis topic was on the determination of phosphorus in natural waters using image analysis.
+
+# Common formatting:
+ - `**bold text**` makes **bold text**
+ - `*italic text*` makes *italic text*
+ - `[link text](url)` makes clickable links
+ - `- item` makes bullet points
+ - `## Heading` makes section headings
 
 ---
