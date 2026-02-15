@@ -11,6 +11,7 @@ name: "Santiago Gómez"
 role: "Research MSc Student"
 photo: "/assets/images/members/santiago-gomez.jpeg"
 email: "sgo008@un-ihe.org"
+linkedin: "https://www.linkedin.com/in/santiago-gomez-molina/"
 
 # Optional but encouraged: Add links to your linkedin, github and a video explaining why you joined!
 # REMOVE THE # at "video" TO SHOW THIS PART!!
@@ -59,11 +60,7 @@ email: "sgo008@un-ihe.org"
 # - `## Heading` makes section headings
 ---
 
-I'm a IHE Delft MSc Student in Water and Sustainable Development.
-
-I like to study the change space in the water sector. 
-
-I like to focus on things that work. Understanding the challenges is valuable, but I see a bigger benefit in looking for solutions.
+I'm a IHE Delft MSc Student in Water and Sustainable Development. I like to study the change space in the water sector to create an enabling environment for solutions. 
 
 ---
 
